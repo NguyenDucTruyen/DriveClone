@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  
 </script>
 
 <template>
@@ -43,6 +42,21 @@
         <el-icon><setting /></el-icon>
         <span>Navigator Three</span>
       </el-menu-item>
+      
+    <div :class="$style.sideBarSecondListMenu">
+      <el-menu-item index="4">
+        <img src="@/assets/icons/IconGroupUsers.svg" alt="">
+        <span>Được chia sẻ với tôi</span>
+      </el-menu-item>
+      <el-menu-item index="5">
+        <el-icon><setting /></el-icon>
+        <span>Gần đây</span>
+      </el-menu-item>
+      <el-menu-item index="6">
+        <el-icon><setting /></el-icon>
+        <span>Có gắn dấu sao</span>
+      </el-menu-item>
+    </div>
     </el-menu>
   </div>
 </template>
