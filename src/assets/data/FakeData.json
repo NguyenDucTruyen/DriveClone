@@ -1,0 +1,47 @@
+{
+  "kind": "root",
+  "id": "root",
+  "mimeType": "application/vnd.google-apps.folder",
+  "name": "Drive gốc",
+  "children": [
+    {
+      "kind": "file",
+      "id": "file1",
+      "mimeType": "application/vnd.google-apps.document",
+      "name": "Tài liệu 1.docx",
+      "parents": ["root"]
+    },
+    {
+      "kind": "folder",
+      "id": "folder1",
+      "mimeType": "application/vnd.google-apps.folder",
+      "name": "Thư mục 1",
+      "parents": ["root"],
+      "children": [
+        {
+          "kind": "file",
+          "id": "file2",
+          "mimeType": "application/vnd.google-apps.spreadsheet",
+          "name": "Bảng tính 1.xlsx",
+          "parents": ["folder1"]
+        },
+        {
+          "kind": "folder",
+          "id": "folder2",
+          "mimeType": "application/vnd.google-apps.folder",
+          "name": "Thư mục phụ 1",
+          "parents": ["folder1"],
+          "children": [
+            {
+              "kind": "file",
+              "id": "file3",
+              "mimeType": "application/vnd.google-apps.presentation",
+              "name": "Bài thuyết trình 1.gslides",
+              "parents": ["folder2"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

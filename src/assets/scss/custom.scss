@@ -1,0 +1,27 @@
+
+.el-menu {
+    border: none;
+    background-color: transparent;
+    border-radius: 100px;
+}
+
+.el-menu-item,
+.el-sub-menu__title {
+    border-radius: 100px;
+    overflow: hidden;
+    &:hover {
+        background-color: #e8eaed;
+        ;
+    }
+}
+
+.el-sub-menu .el-sub-menu__icon-arrow {
+    right: unset;
+    left: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.el-menu-item.is-active {
+    background-color:#c2e7ff;
+}
