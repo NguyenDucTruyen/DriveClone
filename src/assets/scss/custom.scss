@@ -25,3 +25,9 @@
 .el-menu-item.is-active {
     background-color:#c2e7ff;
 }
+
+.el-menu-item [class^=el-icon],
+.el-sub-menu .el-icon {
+    margin-right: 10px;
+    width: unset;
+}

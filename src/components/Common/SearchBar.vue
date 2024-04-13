@@ -30,8 +30,6 @@ function clearSearchContent(): void {
       </ButtonIcon>
     </div>
     <input v-model="searchContent" type="text" :class="$style.searchInput" placeholder="Tìm trong Drive">
-
-    <span>{{ searchContent }}</span>
   </div>
 </template>
 
