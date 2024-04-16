@@ -1,3 +1,4 @@
+<!-- eslint-disable unused-imports/no-unused-vars -->
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useFakeData } from '@/store/data'
@@ -20,9 +21,9 @@ function clearSearchContent(): void {
   searchContent.value = ''
 }
 
-function handleSearch(data: DriveItem[]) {
-  listResult.value = data;
-}
+// function handleSearch(data: DriveItem[]) {
+//   listResult.value = data;
+// }
 </script>
 
 <template>
@@ -48,7 +49,8 @@ function handleSearch(data: DriveItem[]) {
         <Operation />
       </ButtonIcon>
     </div>
-    <input v-model="searchContent" @input="handleSearch($searchDriveItem(driveItem.children))" type="text" :class="$style.searchInput" placeholder="Tìm trong Drive">
+    <input v-model="searchContent" type="text" :class="$style.searchInput" placeholder="Tìm trong Drive">
+    <!-- <input v-model="searchContent" @input="handleSearch($searchDriveItem(driveItem.children))" type="text" :class="$style.searchInput" placeholder="Tìm trong Drive"> -->
     <ModalAdvancedSearch v-if="showModalAdvancedSearch" @close="closeModalAdvancedSearch"/>
   </div>
 </template>

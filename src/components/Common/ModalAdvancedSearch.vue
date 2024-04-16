@@ -1,11 +1,18 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 
+interface RuleForm {
+  name: string
+  content: string,
+  email: string,
+  type: string[]
+}
 const emit=defineEmits(['close'])
-const form = reactive({
+const form = reactive<RuleForm>({
   name: '',
   content: '',
   email: '',
+  type: []
 })
 
 const typeDriveItems = [
@@ -51,7 +58,7 @@ const trackedItems = [
   { label: 'Chỉ những nhận xét được giao cho tôi', value: 'Chỉ những nhận xét được giao cho tôi' },
 ]
 function onSubmit() {
-  console.log('submit!')
+  // console.log('submit!')
 }
 function close() {
   emit('close')
@@ -86,15 +93,15 @@ function close() {
         <label :class="$style.formAdvancedSearchLabel">Địa điểm</label>
         <div :class="$style.formAdvancedSearchGroup">
           <DropDown :list-data=" places " :default-data=" places[0] " />
-          <el-checkbox-group v-model=" form.type ">
-            <el-checkbox value="Online activities" name="type">
-              Online activities
+          <el-checkbox-group v-model="form.type" >
+            <el-checkbox value="Trong thùng rác" name="type">
+              Trong thùng rác
             </el-checkbox>
-            <el-checkbox value="Promotion activities" name="type">
-              Promotion activities
+            <el-checkbox value="Có gắn sao" name="type">
+              Có gắn sao
             </el-checkbox>
-            <el-checkbox value="Offline activities" name="type">
-              Offline activities
+            <el-checkbox value="Đã mã hóa" name="type">
+              Đã mã hóa
             </el-checkbox>
           </el-checkbox-group>
         </div>

@@ -2,10 +2,10 @@
 import { computed, ref } from 'vue'
 import { useFakeData } from '@/store/data'
 import type { DriveItem } from '@/types'
-import ModalAdvancedSearch from '@/components/Common/ModalAdvancedSearch.vue';
 
 const data = useFakeData()
 const listResult = ref<DriveItem[]>([])
+// eslint-disable-next-line unused-imports/no-unused-vars
 const driveItem = (computed(() => data.driveData) as any) as DriveItem
 const addData = ref<DriveItem>({
   kind: 'drive#file',
@@ -19,9 +19,9 @@ function pushData() {
   data.addItemToFolder('folder1', addData.value)
 }
 
-function search(data: DriveItem[]) {
-  listResult.value = data;
-}
+// function search(data: DriveItem[]) {
+//   listResult.value = data;
+// }
 </script>
 
 <template>
@@ -30,7 +30,8 @@ function search(data: DriveItem[]) {
     <button @click="pushData">
       Add data
     </button>
-    <button @click="search($searchDriveItem(driveItem.children, 'Truyen'))">
+    <button>
+    <!-- <button @click="search($searchDriveItem(driveItem.children, 'Truyen'))"> -->
       Search data
     </button>
     result: {{ listResult }}
