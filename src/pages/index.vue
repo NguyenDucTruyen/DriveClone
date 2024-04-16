@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { useFakeData } from '@/store/data'
 import type { DriveItem } from '@/types'
 
