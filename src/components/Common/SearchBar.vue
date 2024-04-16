@@ -1,12 +1,12 @@
-<!-- eslint-disable unused-imports/no-unused-vars -->
+
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useFakeData } from '@/store/data'
 import type { DriveItem } from '@/types'
 
-const data = useFakeData()
-const listResult = ref<DriveItem[]>([])
-const driveItem = (computed(() => data.driveData) as any) as DriveItem
+// const data = useFakeData()
+// const listResult = ref<DriveItem[]>([])
+// const driveItem = (computed(() => data.driveData) as any) as DriveItem
 const searchContent = ref('')
 
 const showModalAdvancedSearch = ref(false)

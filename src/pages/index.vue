@@ -5,8 +5,7 @@ import type { DriveItem } from '@/types'
 
 const data = useFakeData()
 const listResult = ref<DriveItem[]>([])
-// eslint-disable-next-line unused-imports/no-unused-vars
-const driveItem = (computed(() => data.driveData) as any) as DriveItem
+// const driveItem = (computed(() => data.driveData) as any) as DriveItem
 const addData = ref<DriveItem>({
   kind: 'drive#file',
   id: 'exel mới',
