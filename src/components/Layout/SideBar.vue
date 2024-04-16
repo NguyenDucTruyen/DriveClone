@@ -5,12 +5,30 @@ import { MostlyCloudy } from '@element-plus/icons-vue'
 <template>
   <div :class="$style.sideBar">
     <div :class="$style.sideBarUpload">
-      <button :class="$style.sideBarUploadButton">
-        <el-icon :size="24">
-          <Plus />
-        </el-icon>
-        <span :class="$style.sideBarUploadButtonText">Mới</span>
-      </button>
+      <el-dropdown trigger="click">
+        <button :class="$style.sideBarUploadButton">
+          <el-icon :size="24">
+            <Plus />
+          </el-icon>
+
+          <span :class="$style.sideBarUploadButtonText">Mới</span>
+        </button>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>Thư mục mới</el-dropdown-item>
+            
+            <el-dropdown-item divided>Tải tệp lên</el-dropdown-item>
+            <el-dropdown-item>Tải thư mục lên</el-dropdown-item>
+            <el-dropdown-item divided>
+              Google Tài liệu
+            </el-dropdown-item>
+            <el-dropdown-item>Google Trang tính</el-dropdown-item>
+            <el-dropdown-item>Google Trình bày</el-dropdown-item>
+            <el-dropdown-item>Google Biểu mẫu</el-dropdown-item>
+            <el-dropdown-item>Ứng dụng khác</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
     </div>
     <el-menu
       default-active="1"
@@ -97,7 +115,9 @@ import { MostlyCloudy } from '@element-plus/icons-vue'
         <span :class="$style.sideBarMoreMemoryDescription">
           Đã sử dụng 3,85 GB trong tổng số 15 GB
         </span>
-        <button :class="$style.sideBarMoreMemoryButton">Mua thêm bộ nhớ</button>
+        <button :class="$style.sideBarMoreMemoryButton">
+          Mua thêm bộ nhớ
+        </button>
       </div>
     </el-menu>
   </div>
@@ -169,7 +189,6 @@ import { MostlyCloudy } from '@element-plus/icons-vue'
     background-color: rgba(0, 0, 0, .12);
     border-radius: 3px;
     position: relative;
-
 
     // -webkit-mask: radial-gradient(circle 16px at -10px 50%,transparent 99%,#fff 100%);
     //   mask:radial-gradient(circle 6px at -10px 50%,transparent 99%,#fff 100%);

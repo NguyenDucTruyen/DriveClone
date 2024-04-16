@@ -4,7 +4,8 @@
 <template>
   <ToolTip>
     <div :class="$style.buttonIcon">
-      <el-icon :size="24" color="#5f6368">
+      <el-icon :size="24" 
+      >
         <slot />
       </el-icon>
     </div>

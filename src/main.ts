@@ -1,13 +1,19 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 import Root from './Root.vue'
 import router from './router'
 import './assets/scss/main.scss'
+import {install} from '@/plugins/index.ts'
 
 const app = createApp(Root)
 
-app.use(router)
+const pinia = createPinia()
+app
+.use(router)
+.use(pinia)
+.use(install)
 
 router.isReady().then(() => {
   app.mount('#root')

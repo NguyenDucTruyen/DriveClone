@@ -41,5 +41,6 @@
     "toml",
     "gql",
     "graphql"
-  ]
+  ],
+  "vetur.validation.script": false
 }

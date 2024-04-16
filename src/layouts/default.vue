@@ -40,5 +40,7 @@
 
   .defaultBodyContainer {
     width: 100%; 
+    border-radius: 14px;
+    background-color: var(--dt-background);
   }
 </style>

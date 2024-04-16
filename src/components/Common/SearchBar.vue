@@ -1,9 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useFakeData } from '@/store/data'
+import type { DriveItem } from '@/types'
 
+const data = useFakeData()
+const listResult = ref<DriveItem[]>([])
+const driveItem = (computed(() => data.driveData) as any) as DriveItem
 const searchContent = ref('')
+
+const showModalAdvancedSearch = ref(false)
+
+function openModalAdvancedSearch() { 
+  showModalAdvancedSearch.value = true
+}
+function closeModalAdvancedSearch() {
+  showModalAdvancedSearch.value = false
+}
 function clearSearchContent(): void {
   searchContent.value = ''
+}
+
+function handleSearch(data: DriveItem[]) {
+  listResult.value = data;
 }
 </script>
 
@@ -24,12 +42,14 @@ function clearSearchContent(): void {
     </div>
     <div
       :class="[$style.searchIconButton, $style.searchIconOperation]"
+      @click="openModalAdvancedSearch"
     >
       <ButtonIcon tooltip-content="Tìm kiếm nâng cao">
         <Operation />
       </ButtonIcon>
     </div>
-    <input v-model="searchContent" type="text" :class="$style.searchInput" placeholder="Tìm trong Drive">
+    <input v-model="searchContent" @input="handleSearch($searchDriveItem(driveItem.children))" type="text" :class="$style.searchInput" placeholder="Tìm trong Drive">
+    <ModalAdvancedSearch v-if="showModalAdvancedSearch" @close="closeModalAdvancedSearch"/>
   </div>
 </template>
 

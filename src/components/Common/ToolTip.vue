@@ -34,7 +34,7 @@ onMounted(() => {
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px !important;
-    background-color: #1f1f1f;
+    background-color: #4f4f4f;
     line-height: 16px;
 }
 .el-popper.is-customized {

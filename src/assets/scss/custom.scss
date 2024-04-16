@@ -1,4 +1,5 @@
 
+@import "./variables";
 .el-menu {
     border: none;
     background-color: transparent;
@@ -30,4 +31,31 @@
 .el-sub-menu .el-icon {
     margin-right: 10px;
     width: unset;
+}
+
+.el-input__wrapper {
+    border: 1px solid #747775;
+    box-shadow: none;
+    padding: 0 20px 0 18px
+}
+
+.el-input__wrapper:hover {
+    box-shadow: -1px 1px 0 0px var(--dt-on-surface-variant);
+}
+
+.el-input__wrapper.is-focus {
+    border-color: var(--dt-primary-action);
+    box-shadow: 0 0 0 1px var(--dt-primary-action);
+}
+
+.el-input__inner,
+.el-input__inner::placeholder {
+    color: var(--dt-on-surface);
+    font-size: .875rem;
+    height: 1.75rem;
+    min-height: 40px;
+    padding: .625rem 0;
+    outline: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
